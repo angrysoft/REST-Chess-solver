@@ -1,13 +1,3 @@
-
-Masz następującą liczbę nowych wiadomości: 3.
-
-Przejdź do treści
-Korzystanie z usługi Gmail z czytnikami ekranu
-Wątki
-Używasz 8,77 GB z 15 GB
-Warunki · Prywatność · Zasady programu
-Ostatnia aktywność konta: 2 minuty temu
-Szczegóły
 # REST Chess solver
 
 Projekt polega na utworzeniu prostej aplikacji REST wspomagającej grę w szachy.
