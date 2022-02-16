@@ -1,6 +1,16 @@
+build:
+	docker-compose build
+
+up:
+	docker-compose up -d
+
+logs:
+	docker-compose logs -f
+
 test:
-	python -m pytest
+	docker-compose run --rm --no-deps --entrypoint="python -m pytest" api /code/tests
 
-run:
-	python -m chess.entrypoints.flask_app
+down:
+	docker-compose down --remove-orphans
 
+all: down build up test
