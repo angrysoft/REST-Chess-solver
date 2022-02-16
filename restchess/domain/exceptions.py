@@ -1,4 +1,4 @@
-class FiledNotExist(Exception):
+class FieldNotExist(Exception):
     pass
 
 

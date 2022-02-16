@@ -1,7 +1,7 @@
 from typing import Any, Dict
 from flask import Flask, jsonify
 
-from restchess.domain.exceptions import FiledNotExist, FigureNotFound
+from restchess.domain.exceptions import FieldNotExist, FigureNotFound
 from restchess.domain.model import Board, FigureFactory
 
 app = Flask(__name__)
@@ -24,7 +24,7 @@ def available_moves(figure_name: str, field: str):
     except FigureNotFound:
         result["error"] = "Figure does not exist."
         status = 404
-    except FiledNotExist:
+    except FieldNotExist:
         result["error"] = "Field does not exist."
         status = 409
 
@@ -53,7 +53,7 @@ def valid_move(figure_name: str, current_field: str, dest_field: str):
         result["error"] = "Figure does not exist."
         result["move"] = "invalid"
         status = 404
-    except FiledNotExist:
+    except FieldNotExist:
         result["error"] = "Field does not exist."
         result["move"] = "invalid"
         status = 409

@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 from typing import Any, Dict, List
 import chess
 
-from restchess.domain.exceptions import FigureNotFound, FiledNotExist
+from restchess.domain.exceptions import FigureNotFound, FieldNotExist
 
 
 class Board:
@@ -39,7 +39,7 @@ class Board:
 class Figure(ABC):
     def __init__(self, field: str) -> None:
         if field.lower() not in chess.SQUARE_NAMES:
-            raise FiledNotExist
+            raise FieldNotExist
         self.current_field = field.lower()
 
     @abstractmethod

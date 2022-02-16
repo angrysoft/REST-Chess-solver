@@ -2,7 +2,7 @@ import pytest
 from restchess.domain.model import (
     Bishop, Board, FigureFactory, King, Knight, Pawn, Queen, Rook
 )
-from restchess.domain.exceptions import FigureNotFound, FiledNotExist
+from restchess.domain.exceptions import FigureNotFound, FieldNotExist
 
 
 def test_king_list_moves():
@@ -105,3 +105,9 @@ def test_wrong_figure():
     with pytest.raises(FigureNotFound):
         board = Board()
         figure = FigureFactory.create_figure("rooks", "a1", board)
+
+
+def test_wrong_field():
+    with pytest.raises(FieldNotExist):
+        board = Board()
+        figure = FigureFactory.create_figure("rook", "a15", board)
