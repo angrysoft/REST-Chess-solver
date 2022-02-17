@@ -1,6 +1,13 @@
 import pytest
 from restchess.domain.model import (
-    Bishop, Board, FigureFactory, King, Knight, Pawn, Queen, Rook
+    Bishop,
+    Board,
+    FigureFactory,
+    King,
+    Knight,
+    Pawn,
+    Queen,
+    Rook,
 )
 from restchess.domain.exceptions import FigureNotFound, FieldNotExist
 
