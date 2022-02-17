@@ -111,3 +111,17 @@ def test_wrong_field():
     with pytest.raises(FieldNotExist):
         board = Board()
         figure = FigureFactory.create_figure("rook", "a15", board)
+
+
+def test_king_valid_move():
+    board = Board(True)
+    f = King("D1", board)
+    valid_move = f.validate_move("D2")
+    assert valid_move is True
+
+
+def test_king_invalid_move():
+    board = Board(True)
+    f = King("D1", board)
+    valid_move = f.validate_move("D4")
+    assert valid_move is False
